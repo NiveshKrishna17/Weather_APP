@@ -1,0 +1,1 @@
+export const BACKEND_URL = 'https://api.weatherbit.io/v2.0/history/energy?&start_date=2024-03-03&end_date=2024-03-10&threshold=63&units=I&key=8ff6b1c427824112b02b9f92f1485bbb&tp=daily'

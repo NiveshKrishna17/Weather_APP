@@ -1,0 +1,1 @@
+export { default as Homebackground } from './Images/weather_home.jpg'
