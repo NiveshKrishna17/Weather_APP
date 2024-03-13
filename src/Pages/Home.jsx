@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { Input } from '../Components';
 import { useWeatherData } from '../React-Query/Get';
 
+/**
+ * Function to fetch weather data from the API and handle the response accordingly.
+ *
+ */
 const Home = () => {
     const [inputValue, setInputValue] = useState('')
     const [debouncedValue, setDebouncedValue] = useState('')
@@ -14,15 +18,25 @@ const Home = () => {
     useEffect(() => {
         const delayInputTimeoutId = setTimeout(() => {
             setDebouncedValue(inputValue);
-        }, 1000);
+        }, 500);
 
         return () => clearTimeout(delayInputTimeoutId);
     }, [inputValue])
 
+    /**
+     * Sets the input value based on the event object.
+     *
+     * @param {type} e - the event object
+     * @return {type} undefined
+     */
     const valueFromInput = (e) => {
         setInputValue(e)
     }
 
+    /**
+     * Function to fetch weather data from the API and handle the response accordingly.
+     *
+     */
     const getWeatherFromApi = async () => {
         if (debouncedValue) {
             const weatherResponse = await weatherDataMutation.mutateAsync(debouncedValue)
