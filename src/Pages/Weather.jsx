@@ -46,11 +46,11 @@ const Weather = ({ weatherData }) => {
                         <Divider />
                     </Grid>
                     <Grid item xs={12} md={9}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }} className="detail_temp">
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }} className="detail_temp">
                             {[...data].map((_, index) => (
                                 <Box key={index} sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.5)', borderRadius: 2 }}>
                                     <Typography variant="h1">{getWeatherIconByTemp(_.temp)}</Typography>
-                                    <Typography variant="h5" key={index}>{_.temp}</Typography>
+                                    <Typography variant="h5" key={index}>{_.temp}&deg;C</Typography>
                                     <Typography variant="h5">{moment(_.date).format('dddd')}</Typography>
                                     <Typography variant="h5">{moment(_.date).format('L')}</Typography>
                                 </Box>
